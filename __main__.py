@@ -36,4 +36,6 @@ if __name__ == "__main__":
 	login(user, pwd)
 	get_stock_page()
 	get_acct_page()
+        # TODO: Fix input start date. Currently doesn't work as is.
 	input_start_date()
+        # TODO: Include logic to pull page source.
