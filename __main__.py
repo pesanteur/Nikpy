@@ -5,8 +5,9 @@ from selenium import webdriver
 from os import environ
 from time import sleep
 from bs4 import BeautifulSoup
-
-
+from collections import OrderedDict
+import json
+import time
 
 def start_browser():
         url = "http://www.nikkyo.gr.jp"
@@ -42,19 +43,38 @@ def get_page_source():
 
 def find_table():
         source = get_page_source()
-        soup = BeautifulSoup(source)
+        soup = BeautifulSoup(source, 'lxml')
         table = soup.find('table', attrs={'id': 'GeneralPurchases'})
         return table
 
 def scrape_table():
         table = find_table()
         rows = table.findAll('tr')
+        return table
 
+def build_dictionary():
+        table = scrape_table()
+        table_data = [[cell.text for cell in row('td')] for row in table('tr')]
+        table_headers = [cell.text for cell in table('th')]
+        results = []
+        # slicing here ignores blanks caused by header cells
+        for data in table_data[1:]:
+           test = OrderedDict(zip(table_headers, data))
+           results.append(test)
+        return results
 if __name__ == "__main__":
-	browser = start_browset()
+	browser = start_browser()
         user = environ.get('USERNAME')
 	pwd = environ.get('PASSWORD')
 	login(user, pwd)
 	get_acct_page()
 	input_start_date()
+        time.sleep(1) # improve on this by using built in wait functions for selenium
+        get_page_source()
+        time.sleep(1)
+        find_table()
+        scrape_table()
+        results = build_dictionary()
+        with open('cars.json', 'w') as outfile:
+            json.dumps(results, outfile)
         # TODO: Include logic to pull page source.
