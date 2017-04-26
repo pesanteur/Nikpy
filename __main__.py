@@ -3,6 +3,7 @@ from selenium import webdriver
 # example: environ.get('USERNAME')
 # exported as export USERNAME='<insert username here>'
 from os import environ
+from time import sleep
 
 url = "http://www.nikkyo.gr.jp"
 
@@ -24,18 +25,17 @@ def get_acct_page():
 	acct_elem = browser.find_element_by_id('account_report_btn')
 	acct_elem.click()
 
-def input_start_date():
+def input_start_date(date='2016/06/14'):
 	search_date = browser.find_element_by_id('srch_term_start')
-	search_date.send_keys('2016/06/14')
+	search_date.clear()
+        search_date.send_keys(date)
 	search_btn = browser.find_element_by_id('btn_srch')
-	search_btn.click()
+        search_btn.click()
 
 if __name__ == "__main__":
 	user = environ.get('USERNAME')
 	pwd = environ.get('PASSWORD')
 	login(user, pwd)
-	get_stock_page()
 	get_acct_page()
-        # TODO: Fix input start date. Currently doesn't work as is.
 	input_start_date()
         # TODO: Include logic to pull page source.
