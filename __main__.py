@@ -4,11 +4,15 @@ from selenium import webdriver
 # exported as export USERNAME='<insert username here>'
 from os import environ
 from time import sleep
+from bs4 import BeautifulSoup
 
-url = "http://www.nikkyo.gr.jp"
 
-browser = webdriver.Chrome()
-browser.get(url)
+
+def start_browser():
+        url = "http://www.nikkyo.gr.jp"
+        browser = webdriver.Chrome()
+        browser.get(url)
+        return  browser
 
 def login(user, pwd):
 	username = browser.find_element_by_id('userlogin')
@@ -32,8 +36,23 @@ def input_start_date(date='2016/06/14'):
 	search_btn = browser.find_element_by_id('btn_srch')
         search_btn.click()
 
+def get_page_source():
+        html_source = browser.page_source
+        return html_source
+
+def find_table():
+        source = get_page_source()
+        soup = BeautifulSoup(source)
+        table = soup.find('table', attrs={'id': 'GeneralPurchases'})
+        return table
+
+def scrape_table():
+        table = find_table()
+        rows = table.findAll('tr')
+
 if __name__ == "__main__":
-	user = environ.get('USERNAME')
+	browser = start_browset()
+        user = environ.get('USERNAME')
 	pwd = environ.get('PASSWORD')
 	login(user, pwd)
 	get_acct_page()
