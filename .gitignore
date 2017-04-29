@@ -1,2 +1,6 @@
 *.pyc
 .*.swp
+*.zip
+*.json
+*.csv
+*.log
