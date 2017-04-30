@@ -1,7 +1,10 @@
 from datetime import datetime
 from os import environ # used to get setup variables from the environ
 from selenium import webdriver
-from login_util import login_user
+from .login_util import login_user
+from .navi_util import date_range
+from .data_util import get_car_data_as_json
+import json
 
 class NikPy:
     "Class to be instantiated to use the script"
@@ -14,6 +17,7 @@ class NikPy:
                             % (datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
         self.username = username or environ.get('NIK_USER')
         self.password = password or environ.get('NIK_PW')
+        self.date = '2016/06/14' # standard date, can be updated
 
     def login(self):
         "Used to login the user with the Nik username and password"
@@ -27,6 +31,26 @@ class NikPy:
             self.log_file.write('Logged in successfully!\n')
 
         return self
+
+    def navigate(self):
+        "Used to navigate to main account page."
+        date_range(self.browser, self.date)
+        print('Navigated to desired page!')
+        self.log_file.write('Navigated to desired page')
+
+        return self
+
+    def get_car_info(self):
+        "Used to grab car info from table"
+        results = get_car_data_as_json(self.browser, self.date)
+        print('Car data pulled!')
+        self.log_file.write('Car data pulled!')
+        # for some reason context manager below does not work when filename built. TODO: figure out why in future
+        with open('test.json', 'w') as outfile:
+            json.dump(results, outfile)
+
+        return self
+
 
   #TODO: Add additional functions to class.
 
