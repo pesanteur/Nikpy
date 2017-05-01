@@ -28,4 +28,22 @@ Navigated to desired pageSession started - 2017-04-30 14:46:33
 Logged in successfully!
 Navigated to desired pageSession started - 2017-04-30 14:58:26
 Logged in successfully!
-Navigated to desired pageCar data pulled!
+Navigated to desired pageCar data pulled!Session started - 2017-04-30 17:38:20
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 17:49:30
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 17:56:29
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 18:13:38
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 18:19:29
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 18:26:50
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 20:08:18
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 20:22:44
+Logged in successfully!
+Navigated to desired pageSession started - 2017-04-30 20:26:47
+Logged in successfully!
+Navigated to desired page

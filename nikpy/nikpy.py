@@ -4,6 +4,8 @@ from selenium import webdriver
 from .login_util import login_user
 from .navi_util import date_range
 from .data_util import get_car_data_as_json
+from .pic_pull import pic_pull
+from collections import OrderedDict
 import json
 
 class NikPy:
@@ -51,6 +53,19 @@ class NikPy:
 
         return self
 
+    def get_pic_urls(self, download=False):
+        "Used to grab pic urls"
+        urls = pic_pull(self.browser)
+        if download == True:
+            url_data = OrderedDict(urls)
+            with open('urls.json', 'w') as outfile:
+                json.dump(url_data, outfile)
+            print('Urls downloaded.')
+            self.log_file.write('Urls downloaded.')
+        else:
+            print('Urls obtained')
+            print(urls)
 
-  #TODO: Add additional functions to class.
+        return self
+  #TODO: Include function to download all images from URL
 
