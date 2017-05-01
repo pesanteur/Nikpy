@@ -19,7 +19,7 @@ class NikPy:
                             % (datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
         self.username = username or environ.get('NIK_USER')
         self.password = password or environ.get('NIK_PW')
-        self.date = '2016/06/14' # standard date, can be updated
+        self.date = '2017/03/14' # standard date, can be updated
 
     def login(self):
         "Used to login the user with the Nik username and password"
@@ -34,11 +34,11 @@ class NikPy:
 
         return self
 
-    def navigate(self):
+    def navigate(self, date):
         "Used to navigate to main account page."
         date_range(self.browser, self.date)
         print('Navigated to desired page!')
-        self.log_file.write('Navigated to desired page')
+        self.log_file.write('Navigated to desired page\n')
 
         return self
 
@@ -46,7 +46,7 @@ class NikPy:
         "Used to grab car info from table"
         results = get_car_data_as_json(self.browser, self.date)
         print('Car data pulled!')
-        self.log_file.write('Car data pulled!')
+        self.log_file.write('Car data pulled!\n')
         # for some reason context manager below does not work when filename built. TODO: figure out why in future
         with open('test.json', 'w') as outfile:
             json.dump(results, outfile)
@@ -54,18 +54,32 @@ class NikPy:
         return self
 
     def get_pic_urls(self, download=False):
-        "Used to grab pic urls"
+        "Used to grab pic urls and download to desired folders"
+        #TODO: Make this more pythonic. Test context manager.
         urls = pic_pull(self.browser)
         if download == True:
             url_data = OrderedDict(urls)
             with open('urls.json', 'w') as outfile:
                 json.dump(url_data, outfile)
             print('Urls downloaded.')
-            self.log_file.write('Urls downloaded.')
+            self.log_file.write('Urls downloaded.\n')
         else:
             print('Urls obtained')
-            print(urls)
+            self.log_file.write('Urls obtained!\n')
+            url_dict = dict(urls)
+            for key, values in url_dict.items():
+                folder_path = os.path.join('Car Photos', key)
+                if os.path.exists(folder_path):
+                    continue
+                else:
+                    make_folder = os.makedir(folder_path)
+                    for value in values:
+                        res = requests.get(value)
+                        image_file = open(os.path.join(folder_path, os.path.basename(value)), 'wb')
+                        for chunk in res.iter_content(100000):
+                            image_file.write(chunk)
+                        image_file.close()
 
         return self
-  #TODO: Include function to download all images from URL
+  #TODO: Include Timer, to include timer --> Create a close function
 

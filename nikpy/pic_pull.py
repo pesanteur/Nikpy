@@ -16,16 +16,16 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
 
     for code, link in car_links:
         browser.get(link)
-        thumbnails = browser.find_elements_by_class_name('popic')
+        thumbnails = browser.find_elements_by_class_name('poppic')
 
         inner_links = []
         for picture in thumbnails:
       #  Ideally I want this whole function to just grab links as that way we can close selenium instead of having it open - which is slow.
       #  So need to store links in a way that we can save them and refer to them. Only thing unique is code number so we should probably use that.
             car_pic = picture.get_attribute('href')
-            inner_link.append(car_pic)
+            inner_links.append(car_pic)
 
         pic_links.append((code, inner_links))
     browser.close()
 
-    return car_links
+    return pic_links # switch from car_links to pic_links
