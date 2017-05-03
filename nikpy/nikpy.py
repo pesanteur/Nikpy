@@ -7,7 +7,12 @@ from .data_util import get_car_data_as_json
 from .pic_pull import pic_pull
 from collections import OrderedDict
 import json
+import os
+import requests
+import tqdm
 
+#TODO: Add some randomization to the timing if running more than once, because otherwise connection times out
+#TODO: Add more log details, so we can keep track of where this fails
 class NikPy:
     "Class to be instantiated to use the script"
     def __init__(self, username=None, password=None):
@@ -36,6 +41,7 @@ class NikPy:
 
     def navigate(self, date):
         "Used to navigate to main account page."
+        #TODO: Include start and end date range in date range util
         date_range(self.browser, self.date)
         print('Navigated to desired page!')
         self.log_file.write('Navigated to desired page\n')
@@ -70,15 +76,19 @@ class NikPy:
             for key, values in url_dict.items():
                 folder_path = os.path.join('Car Photos', key)
                 if os.path.exists(folder_path):
+                    print('Folder path: %s already exists' % folder_path)
                     continue
                 else:
-                    make_folder = os.makedir(folder_path)
+                    print('Building folder: %s' % folder_path)
+                    make_folder = os.makedirs(folder_path)
                     for value in values:
+                        print("Now downloading image file: %s" % os.path.basename(value))
                         res = requests.get(value)
                         image_file = open(os.path.join(folder_path, os.path.basename(value)), 'wb')
                         for chunk in res.iter_content(100000):
                             image_file.write(chunk)
                         image_file.close()
+            print("Downloading complete!")
 
         return self
   #TODO: Include Timer, to include timer --> Create a close function
