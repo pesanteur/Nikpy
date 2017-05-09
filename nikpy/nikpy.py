@@ -9,10 +9,9 @@ from collections import OrderedDict
 import json
 import os
 import requests
-import tqdm
+from tqdm import tqdm
 
-#TODO: Add some randomization to the timing if running more than once, because otherwise connection times out
-#TODO: Add more log details, so we can keep track of where this fails
+#TODO: For every print add log details, so we can keep track of where this fails
 class NikPy:
     "Class to be instantiated to use the script"
     def __init__(self, username=None, password=None):
@@ -24,7 +23,7 @@ class NikPy:
                             % (datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
         self.username = username or environ.get('NIK_USER')
         self.password = password or environ.get('NIK_PW')
-        self.date = '2017/03/14' # standard date, can be updated
+        self.date = '2016/09/14' # standard date, can be updated. TODO: Update this to date range
 
     def login(self):
         "Used to login the user with the Nik username and password"
@@ -54,7 +53,7 @@ class NikPy:
         print('Car data pulled!')
         self.log_file.write('Car data pulled!\n')
         # for some reason context manager below does not work when filename built. TODO: figure out why in future
-        with open('test.json', 'w') as outfile:
+        with open('car_info.json', 'w') as outfile:
             json.dump(results, outfile)
 
         return self
@@ -77,19 +76,36 @@ class NikPy:
                 folder_path = os.path.join('Car Photos', key)
                 if os.path.exists(folder_path):
                     print('Folder path: %s already exists' % folder_path)
+                    self.log_file.write('Folder path: %s already exists\n' % folder_path)
                     continue
                 else:
                     print('Building folder: %s' % folder_path)
                     make_folder = os.makedirs(folder_path)
                     for value in values:
                         print("Now downloading image file: %s" % os.path.basename(value))
+                        self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
                         res = requests.get(value)
                         image_file = open(os.path.join(folder_path, os.path.basename(value)), 'wb')
                         for chunk in res.iter_content(100000):
                             image_file.write(chunk)
                         image_file.close()
             print("Downloading complete!")
-
+            self.log_file.write('Downloading complete!\n')
         return self
-  #TODO: Include Timer, to include timer --> Create a close function
 
+
+    def end(self):
+        """Closes the current session"""
+        if self.browser:
+            self.browser.delete_all_cookies()
+            self.browser.close()
+        print('')
+        print('Session ended')
+        print('--------------')
+
+        self.log_file.write('\nSession ended - {}\n'.format(
+            datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            )
+        )
+        self.log_file.write('-' * 20 + '\n\n')
+        self.log_file.close()

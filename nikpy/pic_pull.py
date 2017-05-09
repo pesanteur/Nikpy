@@ -5,10 +5,15 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
     """Pulls picture URLs from page, then iterates through and downloads pictures"""
     pic_elem = browser.find_elements_by_class_name('carpopup')
     car_links = []
+    downloaded = os.listdir('Car Photos') # list of images already downloaded
     for link in pic_elem:
         pic_url = link.get_attribute('href')
         code_no = link.text
-        car_links.append((code_no,pic_url))
+        if code_no in downloaded:
+            print('These images have already been downloaded.')
+            continue
+        else:
+            car_links.append((code_no,pic_url))
     # can turn this into a dictionary in future by simply doing dict(car_links) or using OrderedDict
     pic_links = []
     # print(car_links)

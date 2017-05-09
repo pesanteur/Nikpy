@@ -13,3 +13,4 @@ df['price_int'] = df['Price'].str.replace(r'\xa0K\t\t', '').convert_objects(conv
 pd.to_numeric(df['price_int']) # does the same as above, but for some reason breaks with commas, maybe stick with above.
 df.to_csv('{{filename}}') # saves dataframe to useful csv form, this makes life so much easier omg
 
+plt.figure()
