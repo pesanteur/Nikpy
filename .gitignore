@@ -6,5 +6,4 @@
 *.log
 __pycache__
 /Car\ Photos/*
-*.txt
 /site_updater/*

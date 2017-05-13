@@ -32,8 +32,9 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             inner_links.append(car_pic)
 
         pic_links.append((code, inner_links))
+    """
     print("Closing browser.")
     browser.close()
     print('Browser closed.')
-
+    """
     return pic_links # switch from car_links to pic_links

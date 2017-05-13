@@ -97,8 +97,10 @@ class NikPy:
     def end(self):
         """Closes the current session"""
         if self.browser:
+            print("Closing browser")
             self.browser.delete_all_cookies()
             self.browser.close()
+            print("Browser closed.")
         print('')
         print('Session ended')
         print('--------------')

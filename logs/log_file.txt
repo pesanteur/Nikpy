@@ -138,3 +138,11 @@ Car data pulled!
 Session ended - 2017-05-09 17:22:52
 --------------------
 
+Session started - 2017-05-12 09:56:36
+Logged in successfully!
+Navigated to desired page
+Car data pulled!
+
+Session ended - 2017-05-12 09:57:35
+--------------------
+
