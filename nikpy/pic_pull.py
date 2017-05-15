@@ -1,5 +1,6 @@
 """Pulls pictures from account page on website"""
 import os
+from .data_util import get_table_data
 
 def pic_pull(browser): # maybe change this to just get pics and then create another to download the pictures or nah?
     """Pulls picture URLs from page, then iterates through and downloads pictures"""
@@ -21,6 +22,8 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
     for code, link in car_links:
         print('Navigating to car with CODE no.: %s' % code)
         browser.get(link)
+        # TODO: pull table data for cars here
+        car_info_table = get_table_data(browser)[0] # gets html table data about the cars
         thumbnails = browser.find_elements_by_class_name('poppic')
 
         inner_links = []
@@ -30,8 +33,7 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             basename = os.path.basename(car_pic)
             print("URL for pic %s grabbed" % basename)
             inner_links.append(car_pic)
-
-        pic_links.append((code, inner_links))
+        pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
     """
     print("Closing browser.")
     browser.close()

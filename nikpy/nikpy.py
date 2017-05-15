@@ -3,7 +3,7 @@ from os import environ # used to get setup variables from the environ
 from selenium import webdriver
 from .login_util import login_user
 from .navi_util import date_range
-from .data_util import get_car_data_as_json
+from .data_util import get_car_data_as_json, get_table_data
 from .pic_pull import pic_pull
 from collections import OrderedDict
 import json
@@ -73,7 +73,7 @@ class NikPy:
             self.log_file.write('Urls obtained!\n')
             url_dict = dict(urls)
             for key, values in url_dict.items():
-                folder_path = os.path.join('Car Photos', key)
+                folder_path = os.path.join('Car Photos', key[0])
                 if os.path.exists(folder_path):
                     print('Folder path: %s already exists' % folder_path)
                     self.log_file.write('Folder path: %s already exists\n' % folder_path)
@@ -81,6 +81,11 @@ class NikPy:
                 else:
                     print('Building folder: %s' % folder_path)
                     make_folder = os.makedirs(folder_path)
+                    # This can break url_dict in main module. Need to fix this.
+                    # Error that comes up in main module is : TypeError:- unhashable type list
+                    car_desc_file = open(os.path.join(folder_path, os.path.basename(key[0])), 'wb')
+                    car_desc_file.write(key[1])
+                    car_desc_file.close()
                     for value in values:
                         print("Now downloading image file: %s" % os.path.basename(value))
                         self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
