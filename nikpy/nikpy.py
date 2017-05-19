@@ -23,7 +23,7 @@ class NikPy:
                             % (datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
         self.username = username or environ.get('NIK_USER')
         self.password = password or environ.get('NIK_PW')
-        self.date = '2016/09/14' # standard date, can be updated. TODO: Update this to date range
+        self.date = None # standard date, can be updated. Date Form: 2016/09/14
 
     def login(self):
         "Used to login the user with the Nik username and password"
@@ -40,6 +40,7 @@ class NikPy:
 
     def navigate(self, date):
         "Used to navigate to main account page."
+        self.date = date
         #TODO: Include start and end date range in date range util
         date_range(self.browser, self.date)
         print('Navigated to desired page!')
@@ -61,7 +62,8 @@ class NikPy:
     def get_pic_urls(self, download=False):
         "Used to grab pic urls and download to desired folders"
         #TODO: Make this more pythonic. Test context manager.
-        urls = pic_pull(self.browser)
+        urls = pic_pull(self.browser)[0]
+        table = pic_pull(self.browser)[1]
         if download == True:
             url_data = OrderedDict(urls)
             with open('urls.json', 'w') as outfile:
@@ -73,19 +75,22 @@ class NikPy:
             self.log_file.write('Urls obtained!\n')
             url_dict = dict(urls)
             for key, values in url_dict.items():
-                folder_path = os.path.join('Car Photos', key[0])
+                folder_path = os.path.join('Car Photos', key)
                 if os.path.exists(folder_path):
                     print('Folder path: %s already exists' % folder_path)
                     self.log_file.write('Folder path: %s already exists\n' % folder_path)
+                    #TODO: Check if table csv exists in each folder as well. If file does not exist build it.
                     continue
                 else:
                     print('Building folder: %s' % folder_path)
                     make_folder = os.makedirs(folder_path)
                     # This can break url_dict in main module. Need to fix this.
                     # Error that comes up in main module is : TypeError:- unhashable type list
+                    """
                     car_desc_file = open(os.path.join(folder_path, os.path.basename(key[0])), 'wb')
                     car_desc_file.write(key[1])
                     car_desc_file.close()
+                    """
                     for value in values:
                         print("Now downloading image file: %s" % os.path.basename(value))
                         self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
@@ -94,6 +99,26 @@ class NikPy:
                         for chunk in res.iter_content(100000):
                             image_file.write(chunk)
                         image_file.close()
+
+                    #TODO: Build csv file of table data after pulling pictures
+
+            table_data = OrderedDict(table)
+            table_dict = dict(table)
+            for key, value in table_dict.items():
+                folder_path = os.path.join('Car Photos', key)
+                if os.path.exists(folder_path):
+                    print('Checking Folder path: % for data tables.' % folder_path)
+                    self.log_file.write('Checking Folder path: %s for data tables.\n' % folder_path)
+                    table_path = os.path.join(folder_path, os.path.basename(value))
+                    if table_path:
+                        continue
+                    else:
+                        with open(table_path, 'w') as table_file:
+                            json.dump(value, table_file)
+                        print('Downloaded data table!')
+                        self.log_file.write('Car tables downloaded!\n')
+                else:
+                    print('No such vehicle yet!')
             print("Downloading complete!")
             self.log_file.write('Downloading complete!\n')
         return self

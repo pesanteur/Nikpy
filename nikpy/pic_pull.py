@@ -6,6 +6,7 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
     """Pulls picture URLs from page, then iterates through and downloads pictures"""
     pic_elem = browser.find_elements_by_class_name('carpopup')
     car_links = []
+    table_data = []
     downloaded = os.listdir('Car Photos') # list of images already downloaded
     for link in pic_elem:
         pic_url = link.get_attribute('href')
@@ -17,6 +18,7 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             car_links.append((code_no,pic_url))
     # can turn this into a dictionary in future by simply doing dict(car_links) or using OrderedDict
     pic_links = []
+    table_links = []
     # print(car_links)
 
     for code, link in car_links:
@@ -33,10 +35,12 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             basename = os.path.basename(car_pic)
             print("URL for pic %s grabbed" % basename)
             inner_links.append(car_pic)
-        pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
-    """
-    print("Closing browser.")
-    browser.close()
-    print('Browser closed.')
-    """
-    return pic_links # switch from car_links to pic_links
+       #pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
+        table_links.append((code, car_info_table))
+        pic_links.append((code, inner_links)) # pic_links is structured like this so it can be turned into a dictionary
+    #TODO: Continue to build out table pull
+"""
+    for code in downloaded:
+         car_info_table = get_table_data(browser)[0] # gets html table data about the cars
+"""
+    return pic_links, table_links # switch from car_links to pic_links

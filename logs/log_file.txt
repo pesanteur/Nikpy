@@ -156,3 +156,219 @@ Session started - 2017-05-14 22:15:28
 Logged in successfully!
 Navigated to desired page
 Urls obtained!
+Session started - 2017-05-15 22:53:55
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Session started - 2017-05-15 23:03:39
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Session started - 2017-05-15 23:08:36
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Downloading complete!
+
+Session ended - 2017-05-15 23:10:13
+--------------------
+
+Session started - 2017-05-18 18:07:08
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Folder path: Car Photos/1 already exists
+Downloading complete!
+
+Session ended - 2017-05-18 18:08:20
+--------------------
+
+Session started - 2017-05-18 20:49:07
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:SB181100-1.jpg
+ Now downloading image file:SB181100-2.jpg
+ Now downloading image file:SB181100-3.jpg
+ Now downloading image file:SB181100-4.jpg
+ Now downloading image file:SB181100-5.jpg
+ Now downloading image file:SB181100-6.jpg
+ Now downloading image file:SB181100-7.jpg
+ Now downloading image file:SB181100-8.jpg
+ Now downloading image file:SB181100-9.jpg
+ Now downloading image file:SB181100-10.jpg
+ Now downloading image file:SB181100-11.jpg
+ Now downloading image file:SB181100-12.jpg
+ Now downloading image file:SB181100-13.jpg
+ Now downloading image file:SB181100-14.jpg
+ Now downloading image file:SB181100-15.jpg
+ Now downloading image file:SB181100-16.jpg
+ Now downloading image file:SB181100-17.jpg
+ Now downloading image file:SB181100-18.jpg
+ Now downloading image file:SB181100-19.jpg
+ Now downloading image file:SB181100-20.jpg
+ Now downloading image file:SB181100-21.jpg
+ Now downloading image file:SB181100-22.jpg
+ Now downloading image file:SB181100-23.jpg
+ Now downloading image file:SB181100-24.jpg
+ Now downloading image file:SB181100-25.jpg
+ Now downloading image file:SB181100-26.jpg
+ Now downloading image file:SB181100-27.jpg
+ Now downloading image file:SB181100-28.jpg
+ Now downloading image file:SB181100-29.jpg
+ Now downloading image file:SB181100-30.jpg
+ Now downloading image file:SB181100-31.jpg
+ Now downloading image file:SB181100-32.jpg
+ Now downloading image file:SB181100-33.jpg
+ Now downloading image file:SB181100-34.jpg
+ Now downloading image file:SB181100-35.jpg
+ Now downloading image file:SB181100-36.jpg
+ Now downloading image file:SB181100-37.jpg
+ Now downloading image file:SB181100-38.jpg
+ Now downloading image file:SB181100-39.jpg
+ Now downloading image file:SB181100-40.jpg
+ Now downloading image file:181100-1.JPG
+ Now downloading image file:181100-2.JPG
+ Now downloading image file:181600-d52708bd297af92803a406637f0171f4.jpg
+ Now downloading image file:181600-a141b547d2f02d16d0d4cc406a1a738f.jpg
+ Now downloading image file:181600-e4383c855f30a7b6a38634d5c4aa7f88.jpg
+ Now downloading image file:181600-02a7a866aa18a47c89a3e0158bf50803.jpg
+ Now downloading image file:SB181109-5.jpg
+ Now downloading image file:SB181109-6.jpg
+ Now downloading image file:SB181109-7.jpg
+ Now downloading image file:SB181109-8.jpg
+ Now downloading image file:SB181109-9.jpg
+ Now downloading image file:SB181109-10.jpg
+ Now downloading image file:SB181109-11.jpg
+ Now downloading image file:SB181109-12.jpg
+ Now downloading image file:SB181109-13.jpg
+ Now downloading image file:SB181109-14.jpg
+ Now downloading image file:SB181109-15.jpg
+ Now downloading image file:SB181109-16.jpg
+ Now downloading image file:SB181109-17.jpg
+ Now downloading image file:SB181109-18.jpg
+ Now downloading image file:SB181109-19.jpg
+ Now downloading image file:SB181109-20.jpg
+ Now downloading image file:SB181109-21.jpg
+ Now downloading image file:SB181109-22.jpg
+ Now downloading image file:SB181109-23.jpg
+ Now downloading image file:SB181109-24.jpg
+ Now downloading image file:SB181109-25.jpg
+ Now downloading image file:SB181109-26.jpg
+ Now downloading image file:SB181109-27.jpg
+ Now downloading image file:SB181109-28.jpg
+ Now downloading image file:SB181109-29.jpg
+ Now downloading image file:SB181109-30.jpg
+ Now downloading image file:SB181109-31.jpg
+ Now downloading image file:SB181109-32.jpg
+ Now downloading image file:SB181109-33.jpg
+ Now downloading image file:SB181109-34.jpg
+ Now downloading image file:SB181109-35.jpg
+ Now downloading image file:SB181109-36.jpg
+ Now downloading image file:181109-68dc4d565c6590785c64d5c5e994cf57.jpg
+ Now downloading image file:181109-5cbb9da75fe8cc26749496957c48eb80.jpg
+ Now downloading image file:181109-ae4926f59b79f3708f52f9fe262a501d.jpg
+ Now downloading image file:181109-bc2b3b5b25efa9abb7d2eec0e56f0586.jpg
+ Now downloading image file:181109-1.JPG
+ Now downloading image file:181109-2.JPG
+ Now downloading image file:MD178789-5.jpg
+ Now downloading image file:MD178789-6.jpg
+ Now downloading image file:MD178789-7.jpg
+ Now downloading image file:MD178789-8.jpg
+ Now downloading image file:MD178789-9.jpg
+ Now downloading image file:MD178789-10.jpg
+ Now downloading image file:MD178789-11.jpg
+ Now downloading image file:MD178789-12.jpg
+ Now downloading image file:MD178789-13.jpg
+ Now downloading image file:MD178789-14.jpg
+ Now downloading image file:MD178789-15.jpg
+ Now downloading image file:MD178789-16.jpg
+ Now downloading image file:MD178789-17.jpg
+ Now downloading image file:MD178789-18.jpg
+ Now downloading image file:MD178789-19.jpg
+ Now downloading image file:MD178789-20.jpg
+ Now downloading image file:MD178789-21.jpg
+ Now downloading image file:MD178789-22.jpg
+ Now downloading image file:MD178789-23.jpg
+ Now downloading image file:MD178789-24.jpg
+ Now downloading image file:MD178789-25.jpg
+ Now downloading image file:MD178789-26.jpg
+ Now downloading image file:MD178789-27.jpg
+ Now downloading image file:MD178789-28.jpg
+ Now downloading image file:MD178789-29.jpg
+ Now downloading image file:MD178789-30.jpg
+ Now downloading image file:MD178789-31.jpg
+ Now downloading image file:MD178789-32.jpg
+ Now downloading image file:MD178789-33.jpg
+ Now downloading image file:MD178789-34.jpg
+ Now downloading image file:MD178789-35.jpg
+ Now downloading image file:MD178789-36.jpg
+ Now downloading image file:MD178789-37.jpg
+ Now downloading image file:MD178789-38.jpg
+ Now downloading image file:MD178789-39.jpg
+ Now downloading image file:MD178789-40.jpg
+ Now downloading image file:MD178789-41.jpg
+ Now downloading image file:MD178789-42.jpg
+ Now downloading image file:MD178789-43.jpg
+ Now downloading image file:MD178789-44.jpg
+ Now downloading image file:MD178789-45.jpg
+ Now downloading image file:178789-9abe5225ea0f8d2bdcf9a5ce8ef8dc73.jpg
+ Now downloading image file:178789-06f3b31d387bc26b8f4d8fee6cd8890d.jpg
+ Now downloading image file:178789-d4555f3d3008c0033face1dd6834d2b9.jpg
+ Now downloading image file:178789-cbda30612926c850a60dfc1d9d1aa704.jpg
+ Now downloading image file:178789-1.JPG
+ Now downloading image file:178789-2.JPG
+ Now downloading image file:SB180938-5.jpg
+ Now downloading image file:SB180938-6.jpg
+ Now downloading image file:SB180938-7.jpg
+ Now downloading image file:SB180938-8.jpg
+ Now downloading image file:SB180938-9.jpg
+ Now downloading image file:SB180938-10.jpg
+ Now downloading image file:SB180938-11.jpg
+ Now downloading image file:SB180938-12.jpg
+ Now downloading image file:SB180938-13.jpg
+ Now downloading image file:SB180938-14.jpg
+ Now downloading image file:SB180938-15.jpg
+ Now downloading image file:SB180938-16.jpg
+ Now downloading image file:SB180938-17.jpg
+ Now downloading image file:SB180938-18.jpg
+ Now downloading image file:SB180938-19.jpg
+ Now downloading image file:SB180938-20.jpg
+ Now downloading image file:SB180938-21.jpg
+ Now downloading image file:SB180938-22.jpg
+ Now downloading image file:SB180938-23.jpg
+ Now downloading image file:SB180938-24.jpg
+ Now downloading image file:SB180938-25.jpg
+ Now downloading image file:SB180938-26.jpg
+ Now downloading image file:SB180938-27.jpg
+ Now downloading image file:SB180938-28.jpg
+ Now downloading image file:SB180938-29.jpg
+ Now downloading image file:SB180938-30.jpg
+ Now downloading image file:SB180938-31.jpg
+ Now downloading image file:180938-4187bb5e94052eac30e1b08b6efc082f.jpg
+ Now downloading image file:180938-0baf00acab7305a5410a93b17c81c441.jpg
+ Now downloading image file:180938-491ab1e88827e02063c71b2b390b062f.jpg
+ Now downloading image file:180938-55405c87345774ca3d1b918009e072eb.jpg
+ Now downloading image file:180938-1.JPG
+ Now downloading image file:180938-2.JPG
+ Now downloading image file:181695-ec90e7fbc8230bb34f8d51422af50ddf.jpg
+ Now downloading image file:181695-b6b19750dbf414228dea0d0dd29523bb.jpg
+ Now downloading image file:181695-661628b2e8e7d83ffca56235d9969ead.jpg
+ Now downloading image file:181695-263f0fcd876b993feb93ce1b3508b9e7.jpg
+ Session started - 2017-05-18 20:58:59
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Downloading complete!
+
+Session ended - 2017-05-18 20:59:57
+--------------------
+
