@@ -52,7 +52,8 @@ class NikPy:
         results = get_car_data_as_json(self.browser, self.date)
         print('Car data pulled!')
         self.log_file.write('Car data pulled!\n')
-        # for some reason context manager below does not work when filename built. TODO: figure out why in future
+        # for some reason context manager below does not work when filename built.
+        # Context manager did not work as you need to create a path like in table_path below
         with open('car_info.json', 'w') as outfile:
             json.dump(results, outfile)
 
@@ -61,8 +62,6 @@ class NikPy:
     def get_pic_urls(self, download=False):
         "Used to grab pic urls and download to desired folders"
         #TODO: Make this more pythonic. Test context manager.
-        #urls = pic_pull(self.browser)[0], pic_pull(self.browser)[1]
-        #table = pic_pull(self.browser)[1]
         urls, table = pic_pull(self.browser) # this fixed issue of table pul
         if download == True:
             url_data = OrderedDict(urls)
