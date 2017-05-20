@@ -387,3 +387,21 @@ Session ended - 2017-05-19 14:07:32
 Session started - 2017-05-19 22:26:22
 Logged in successfully!
 Navigated to desired page
+Session started - 2017-05-20 10:24:25
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Downloading complete!
+
+Session ended - 2017-05-20 10:26:13
+--------------------
+
+Session started - 2017-05-20 10:57:37
+Logged in successfully!
+Navigated to desired page
+Session started - 2017-05-20 11:06:47
+Logged in successfully!
+Navigated to desired page

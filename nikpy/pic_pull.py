@@ -13,7 +13,7 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
         pic_url = link.get_attribute('href')
         code_no = link.text
         if code_no in downloaded:
-            print('These images have alreafilesdy been downloaded.')
+            print('These images have already been downloaded.')
             files = [f for f in os.listdir(os.path.join('Car Photos', code_no))]
             car_data = 'car_data.json'
             if car_data in files:
@@ -24,14 +24,14 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             continue
         else:
             car_links.append((code_no,pic_url))
-    # can turn this into a dictionary in future by simply doing dict(car_links) or using OrderedDict
+
     pic_links = []
 
     for code, link in car_links:
         print('Navigating to car with CODE no.: %s' % code)
         browser.get(link)
-        # TODO: pull table data for cars here
-        car_info_table = get_table_data(browser)[0] # gets html table data about the cars
+
+        car_info_table = get_table_data(browser)[0] # gets html table data about the cars || This works after testing with pdb
         thumbnails = browser.find_elements_by_class_name('poppic')
 
         inner_links = []
@@ -42,11 +42,8 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             print("URL for pic %s grabbed" % basename)
             inner_links.append(car_pic)
        #pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
-        table_links.append((code, car_info_table))
+        table_links.append((code, car_info_table)) # This works as well therefore issue must be in nikpy.py
+        import pdb; pdb.set_trace()
         pic_links.append((code, inner_links)) # pic_links is structured like this so it can be turned into a dictionary
-    #TODO: Continue to build out table pull
-
-   # for code in downloaded:
-   #      car_info_table = get_table_data(browser)[0] # gets html table data about the cars
 
     return pic_links, table_links # switch from car_links to pic_links

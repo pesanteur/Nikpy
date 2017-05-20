@@ -79,7 +79,7 @@ class NikPy:
                 if os.path.exists(folder_path):
                     print('Folder path: %s already exists' % folder_path)
                     self.log_file.write('Folder path: %s already exists\n' % folder_path)
-                    #TODO: Check if table csv exists in each folder as well. If file does not exist build it.
+                    import pdb; pdb.set_trace()
                     continue
                 else:
                     print('Building folder: %s' % folder_path)
