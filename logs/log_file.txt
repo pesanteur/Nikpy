@@ -372,3 +372,18 @@ Downloading complete!
 Session ended - 2017-05-18 20:59:57
 --------------------
 
+Session started - 2017-05-19 14:05:55
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181851-abab79f0e529ebe0bb8278d62b1601e1.jpg
+ Now downloading image file:181851-ff41c9d96577c81a3f7c3c453a521485.jpg
+ Now downloading image file:181851-ba0550c8aec91496b5698815936d7dd2.jpg
+ Downloading complete!
+
+Session ended - 2017-05-19 14:07:32
+--------------------
+
+Session started - 2017-05-19 22:26:22
+Logged in successfully!
+Navigated to desired page

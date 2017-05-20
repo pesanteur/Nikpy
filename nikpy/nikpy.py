@@ -84,13 +84,6 @@ class NikPy:
                 else:
                     print('Building folder: %s' % folder_path)
                     make_folder = os.makedirs(folder_path)
-                    # This can break url_dict in main module. Need to fix this.
-                    # Error that comes up in main module is : TypeError:- unhashable type list
-                    """
-                    car_desc_file = open(os.path.join(folder_path, os.path.basename(key[0])), 'wb')
-                    car_desc_file.write(key[1])
-                    car_desc_file.close()
-                    """
                     for value in values:
                         print("Now downloading image file: %s" % os.path.basename(value))
                         self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
@@ -113,7 +106,7 @@ class NikPy:
                     if table_path:
                         continue
                     else:
-                        with open(table_path, 'w') as table_file:
+                        with open('car_data.json', 'w') as table_file:
                             json.dump(value, table_file)
                         print('Downloaded data table!')
                         self.log_file.write('Car tables downloaded!\n')

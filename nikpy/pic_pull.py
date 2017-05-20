@@ -8,18 +8,24 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
     car_links = []
     table_data = []
     downloaded = os.listdir('Car Photos') # list of images already downloaded
+    table_links = []
     for link in pic_elem:
         pic_url = link.get_attribute('href')
         code_no = link.text
         if code_no in downloaded:
-            print('These images have already been downloaded.')
+            print('These images have alreafilesdy been downloaded.')
+            files = [f for f in os.listdir(os.path.join('Car Photos', code_no))]
+            car_data = 'car_data.json'
+            if car_data in files:
+                print('Table uploaded!')
+                continue
+            else:
+                print('Table not uploaded') #TODO: Start pulling tables here. How to make pull happen with viewing below...maybe remove other else statement?
             continue
         else:
             car_links.append((code_no,pic_url))
     # can turn this into a dictionary in future by simply doing dict(car_links) or using OrderedDict
     pic_links = []
-    table_links = []
-    # print(car_links)
 
     for code, link in car_links:
         print('Navigating to car with CODE no.: %s' % code)
@@ -39,8 +45,8 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
         table_links.append((code, car_info_table))
         pic_links.append((code, inner_links)) # pic_links is structured like this so it can be turned into a dictionary
     #TODO: Continue to build out table pull
-"""
-    for code in downloaded:
-         car_info_table = get_table_data(browser)[0] # gets html table data about the cars
-"""
+
+   # for code in downloaded:
+   #      car_info_table = get_table_data(browser)[0] # gets html table data about the cars
+
     return pic_links, table_links # switch from car_links to pic_links
