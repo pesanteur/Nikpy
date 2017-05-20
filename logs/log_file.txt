@@ -405,3 +405,104 @@ Navigated to desired page
 Session started - 2017-05-20 11:06:47
 Logged in successfully!
 Navigated to desired page
+Session started - 2017-05-20 11:28:47
+Logged in successfully!
+Navigated to desired page
+Session started - 2017-05-20 11:36:26
+Logged in successfully!
+Navigated to desired page
+Session started - 2017-05-20 11:47:48
+Logged in successfully!
+Navigated to desired page
+Session started - 2017-05-20 11:54:10
+Logged in successfully!
+Navigated to desired page
+Session started - 2017-05-20 12:01:39
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181695-ec90e7fbc8230bb34f8d51422af50ddf.jpg
+ Now downloading image file:181695-b6b19750dbf414228dea0d0dd29523bb.jpg
+ Now downloading image file:181695-661628b2e8e7d83ffca56235d9969ead.jpg
+ Now downloading image file:181695-263f0fcd876b993feb93ce1b3508b9e7.jpg
+ Now downloading image file:181851-abab79f0e529ebe0bb8278d62b1601e1.jpg
+ Now downloading image file:181851-ff41c9d96577c81a3f7c3c453a521485.jpg
+ Now downloading image file:181851-ba0550c8aec91496b5698815936d7dd2.jpg
+ Session started - 2017-05-20 12:12:27
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Session started - 2017-05-20 12:16:46
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Downloading complete!
+
+Session ended - 2017-05-20 12:17:49
+--------------------
+
+Session started - 2017-05-20 12:22:43
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Checking Folder path: Car Photos/181915 for data tables.
+Session started - 2017-05-20 12:47:57
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Downloading complete!
+Session started - 2017-05-20 12:52:35
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Checking Folder path: Car Photos/181915 for data tables.
+Session started - 2017-05-20 13:01:04
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Downloading complete!
+Session started - 2017-05-20 13:11:42
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Checking Folder path: Car Photos/181915 for data tables.
+Session started - 2017-05-20 13:17:41
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Checking Folder path: Car Photos/181915 for data tables.
+Car tables downloaded!
+Downloading complete!
+
+Session ended - 2017-05-20 13:21:52
+--------------------
+
+Session started - 2017-05-20 13:28:51
+Logged in successfully!
+Navigated to desired page
+Urls obtained!
+Now downloading image file:181915-1fea0540a719af361154eaaa3c56679b.jpg
+ Now downloading image file:181915-bb4c23371fe99b639a6153f93ff6eab4.jpg
+ Now downloading image file:181915-f035b9276f434451f17738fdc1fc54eb.jpg
+ Checking Folder path: Car Photos/181915 for data tables.
+Car tables downloaded!
+Downloading complete!
+
+Session ended - 2017-05-20 13:30:08
+--------------------
+

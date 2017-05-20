@@ -43,7 +43,6 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             inner_links.append(car_pic)
        #pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
         table_links.append((code, car_info_table)) # This works as well therefore issue must be in nikpy.py
-        import pdb; pdb.set_trace()
         pic_links.append((code, inner_links)) # pic_links is structured like this so it can be turned into a dictionary
 
     return pic_links, table_links # switch from car_links to pic_links

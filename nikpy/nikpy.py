@@ -11,7 +11,6 @@ import os
 import requests
 from tqdm import tqdm
 
-#TODO: For every print add log details, so we can keep track of where this fails
 class NikPy:
     "Class to be instantiated to use the script"
     def __init__(self, username=None, password=None):
@@ -62,8 +61,9 @@ class NikPy:
     def get_pic_urls(self, download=False):
         "Used to grab pic urls and download to desired folders"
         #TODO: Make this more pythonic. Test context manager.
-        urls = pic_pull(self.browser)[0]
-        table = pic_pull(self.browser)[1]
+        #urls = pic_pull(self.browser)[0], pic_pull(self.browser)[1]
+        #table = pic_pull(self.browser)[1]
+        urls, table = pic_pull(self.browser) # this fixed issue of table pul
         if download == True:
             url_data = OrderedDict(urls)
             with open('urls.json', 'w') as outfile:
@@ -76,10 +76,9 @@ class NikPy:
             url_dict = dict(urls)
             for key, values in url_dict.items():
                 folder_path = os.path.join('Car Photos', key)
-                if os.path.exists(folder_path):
+                if os.path.exists(folder_path): #This may be redundant as pic pull already checks that images have been downloaded
                     print('Folder path: %s already exists' % folder_path)
                     self.log_file.write('Folder path: %s already exists\n' % folder_path)
-                    import pdb; pdb.set_trace()
                     continue
                 else:
                     print('Building folder: %s' % folder_path)
@@ -93,20 +92,20 @@ class NikPy:
                             image_file.write(chunk)
                         image_file.close()
 
-                    #TODO: Build csv file of table data after pulling pictures
 
             table_data = OrderedDict(table)
             table_dict = dict(table)
             for key, value in table_dict.items():
                 folder_path = os.path.join('Car Photos', key)
+                # Below now works
                 if os.path.exists(folder_path):
-                    print('Checking Folder path: % for data tables.' % folder_path)
+                    print('Checking Folder path: %s for data tables.' % folder_path)
                     self.log_file.write('Checking Folder path: %s for data tables.\n' % folder_path)
-                    table_path = os.path.join(folder_path, os.path.basename(value))
-                    if table_path:
+                    table_path = os.path.join(folder_path, 'car_data.json')
+                    if os.path.exists(table_path):
                         continue
                     else:
-                        with open('car_data.json', 'w') as table_file:
+                        with open(table_path, 'w') as table_file:
                             json.dump(value, table_file)
                         print('Downloaded data table!')
                         self.log_file.write('Car tables downloaded!\n')
