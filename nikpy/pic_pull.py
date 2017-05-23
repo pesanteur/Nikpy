@@ -21,13 +21,16 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
                 continue
             else:
                 print('Table not uploaded') #TODO: Start pulling tables here. How to make pull happen with viewing below...maybe remove other else statement?
+                """
                 car_links.append((code_no,pic_url))
                 # This breaks main code somehow TODO: Fix this later
+                # Maybe just delete all images and have new program pull all pictures!
                 for code, link in car_links:
                     browser.get(link)
                     car_info_table = get_table_data(browser)[0] # gets html table data about the cars || This works after testing with pdb
 
                     table_links.append((code, car_info_table))
+                """
             continue
         else:
             car_links.append((code_no,pic_url))
