@@ -5,5 +5,10 @@
 *.csv
 *.log
 __pycache__
+
+##  Folders not to be shared ##
 /Car\ Photos/*
 /site_updater/*
+
+## Private file ##
+run.py

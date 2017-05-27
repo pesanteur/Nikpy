@@ -44,7 +44,8 @@ class NikPy:
         date_range(self.browser, self.date)
         print('Navigated to desired page!')
         self.log_file.write('Navigated to desired page\n')
-
+        print('Start date %s' % date)
+        self.log_file.write('Start date %s ' % date)
         return self
 
     def get_car_info(self):
@@ -114,6 +115,11 @@ class NikPy:
             self.log_file.write('Downloading complete!\n')
         return self
 
+
+    def get_by_code(self, code):
+        results = get_car_data_as_json(self.browser, self.date)
+        if code in results:
+            pass
 
     def end(self):
         """Closes the current session"""
