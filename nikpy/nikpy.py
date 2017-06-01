@@ -9,7 +9,7 @@ from collections import OrderedDict
 import json
 import os
 import requests
-from tqdm import tqdm
+import pdfkit # converts html to pdf
 
 class NikPy:
     "Class to be instantiated to use the script"
@@ -117,9 +117,21 @@ class NikPy:
 
 
     def get_by_code(self, code):
+        #TODO: Expand on this function
         results = get_car_data_as_json(self.browser, self.date)
         if code in results:
             pass
+
+    # TODO: Create function that pulls invoicing information by code
+    # use pdfkit to convert html to pdf
+    def get_invoice_info(self, code):
+        "Grabs invoice info and stores it as a pdf programmatically"
+        pass
+        excertificate_eng_url_structure = "http://www.nikkyocars.com/n2014/member/account/cce_menu.asp?code="+ code +"&cetype=2"
+        excertificate_jap_url_structure = "http://www.nikkyocars.com/n2014/member/account/ccj_menu.asp?code="
+        chassis_no = None #TODO: Get last four digits of Chassis No. from somewhere above!
+        pdfkit.from_url([invoice url, excertificate_eng_url_structure, excertificate_jap_url_structure], '%s.pdf' % chassis_no)
+        # HOWTO: grab html behind login pages using requests --> https://stackoverflow.com/questions/40644929/create-pdf-of-a-https-webpage-which-requires-login-using-pdfkit
 
     def end(self):
         """Closes the current session"""
