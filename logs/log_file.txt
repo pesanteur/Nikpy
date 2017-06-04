@@ -7172,3 +7172,10 @@ Downloading complete!
 Session ended - 2017-05-29 10:19:08
 --------------------
 
+Session started - 2017-06-04 12:09:25
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/01 Car data pulled!
+Session started - 2017-06-04 12:20:30
+Session started - 2017-06-04 12:23:21
+Logged in successfully!

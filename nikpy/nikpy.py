@@ -124,6 +124,7 @@ class NikPy:
 
     # TODO: Create function that pulls invoicing information by code
     # use pdfkit to convert html to pdf
+    """
     def get_invoice_info(self, code):
         "Grabs invoice info and stores it as a pdf programmatically"
         pass
@@ -132,6 +133,7 @@ class NikPy:
         chassis_no = None #TODO: Get last four digits of Chassis No. from somewhere above!
         pdfkit.from_url([invoice url, excertificate_eng_url_structure, excertificate_jap_url_structure], '%s.pdf' % chassis_no)
         # HOWTO: grab html behind login pages using requests --> https://stackoverflow.com/questions/40644929/create-pdf-of-a-https-webpage-which-requires-login-using-pdfkit
+    """
 
     def end(self):
         """Closes the current session"""

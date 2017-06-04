@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 def get_car_data_as_json(browser, date, table_id='GeneralPurchases'):
     """Gets data about cars from main table."""
@@ -49,6 +50,8 @@ def get_table_data(browser, table_id='vehicle_tbl'):
     except TimeoutException:
         print('Loading page took too much time.')
     html_source = browser.page_source
+    table = pd.read_html(html_source)
+    car_table = table[3] # Much faster and easier way of reading table data // TODO: change entire program to be able to use this
     soup = BeautifulSoup(html_source, 'lxml')
     table = soup.find('table', attrs={'id': table_id})
     rows = table.findAll('tr') # not sure if I still need this, leave until tested
