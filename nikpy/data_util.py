@@ -40,6 +40,7 @@ def get_table_data(browser, table_id='vehicle_tbl'):
     """Test function to generalize above function.
     #TODO: This does not perfectly pull information table from site.
     """
+    #TODO: Add pandas pd.read_html() to this to make this easier to use
     delay = 4
     try:
         element_present = EC.presence_of_element_located((By.ID, table_id))
