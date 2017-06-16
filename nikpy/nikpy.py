@@ -118,8 +118,11 @@ class NikPy:
 
     def get_by_code(self, code):
         #TODO: Expand on this function
+        """Grabs car info by NIKKYO Code no."""
         results = get_car_data_as_json(self.browser, self.date)
         if code in results:
+            car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
+            browser.get(car_url)
             pass
 
     # TODO: Create function that pulls invoicing information by code
