@@ -7179,3 +7179,54 @@ Start date 2017/03/01 Car data pulled!
 Session started - 2017-06-04 12:20:30
 Session started - 2017-06-04 12:23:21
 Logged in successfully!
+Session started - 2017-07-04 10:58:38
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Session started - 2017-07-04 11:08:05
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Session started - 2017-07-04 11:26:27
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Quit navigating!
+Session ended - 2017-07-04 14:33:53
+--------------------
+
+Session started - 2017-07-04 14:34:11
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 14:42:53
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Session started - 2017-07-04 14:46:02
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 14:55:53
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 14:59:54
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 15:07:58
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 15:10:56
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Quit navigating!The car code is not in the date range
+Session started - 2017-07-04 15:17:16
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 Session started - 2017-07-04 16:19:22
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/04 The car code is not in the date range
+Quit navigating!
+Session ended - 2017-07-04 16:23:31
+--------------------
+

@@ -10,6 +10,7 @@ import json
 import os
 import requests
 import pdfkit # converts html to pdf
+from  datetime import datetime
 
 class NikPy:
     "Class to be instantiated to use the script"
@@ -119,11 +120,34 @@ class NikPy:
     def get_by_code(self, code):
         #TODO: Expand on this function
         """Grabs car info by NIKKYO Code no."""
-        results = get_car_data_as_json(self.browser, self.date)
-        if code in results:
-            car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
-            browser.get(car_url)
-            pass
+        results = get_car_data_as_json(self.browser, self.date)[0]
+        for i, object in enumerate(results):
+            values = results[i].values()
+            code = '  %s  ' % code
+            if code in values:
+                car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
+                self.browser.get(car_url)
+                # TODO: This code is dumb should just use this
+                # TODO: break down get pic urls into multiple functions so we can pull further
+                break
+            else:
+                print('The code you mentioned is not in the date range')
+                self.log_file.write('The car code is not in the date range\n')
+                keep_trying = input("Would you like to keep trying dates? (Y/n) ").lower()
+                if keep_trying == 'y':
+                    date = self.date
+                    date = datetime.strptime(date, "%Y/%m/%d")
+                    import datetime
+                    new_date = date - datetime.timedelta(days=30)
+                    navigate(new_date)
+                    get_by_code(code)
+                elif keep_trying == "n":
+                    print('Okay see you next time!')
+                    self.log_file.write('Quit navigating!')
+                    break
+                break
+        return self
+
 
     # TODO: Create function that pulls invoicing information by code
     # use pdfkit to convert html to pdf

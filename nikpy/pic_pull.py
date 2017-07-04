@@ -4,6 +4,7 @@ from .data_util import get_table_data
 
 def pic_pull(browser): # maybe change this to just get pics and then create another to download the pictures or nah?
     """Pulls picture URLs from page, then iterates through and downloads pictures"""
+    #TODO: Break this down into a smaller function to make it more readable
     pic_elem = browser.find_elements_by_class_name('carpopup')
     car_links = []
     table_data = []
