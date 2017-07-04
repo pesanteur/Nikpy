@@ -127,8 +127,10 @@ class NikPy:
             if code in values:
                 car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
                 self.browser.get(car_url)
-                # TODO: This code is dumb should just use this
+                # TODO: This code is dumb should just use car_url and check if photos on site
                 # TODO: break down get pic urls into multiple functions so we can pull further
+                # Following code is redunant need to improve
+
                 break
             else:
                 print('The code you mentioned is not in the date range')

@@ -44,6 +44,17 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
             browser.get(link)
 
             car_info_table = get_table_data(browser)[0] # gets html table data about the cars || This works after testing with pdb
+
+            #TODO: remove the following when above found to work
+            """
+            !!!!!!!!
+            !!TEST!!
+            !!!!!!!!
+            """
+
+            inner_links = thumbnail_dl(browser)
+
+            """
             thumbnails = browser.find_elements_by_class_name('poppic')
 
             inner_links = []
@@ -54,7 +65,24 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
                 print("URL for pic %s grabbed" % basename)
                 inner_links.append(car_pic)
            #pic_links.append(((code, car_info_table), inner_links)) # pic_links is structured like this so it can be turned into a dictionary
+            """
             table_links.append((code, car_info_table)) # This works as well therefore issue must be in nikpy.py
             pic_links.append((code, inner_links)) # pic_links is structured like this so it can be turned into a dictionary
 
     return pic_links, table_links # switch from car_links to pic_links
+
+def thumbnail_dl(browser):
+    """Pulls links for car photos from vehicle specific page"""
+    # TODO: find Code on page
+    code = //*[@id="vehicle_tbl"]/tbody/tr[1]/td #XPATH SELECTOR won't work
+    thumbnails = browser.find_elements_by_class_name('poppic')
+
+    inner_links = []
+    print('Downloading URLs from thumbnails for CODE no.: %s' % code)
+    for picture in thumbnails:
+        car_pic = picture.get_attribute('href')
+        basename = os.path.basename(car_pic)
+        print("URL for pic %s grabbed" % basename)
+        inner_links.append(car_pic)
+
+    return inner_links
