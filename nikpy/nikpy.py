@@ -120,34 +120,16 @@ class NikPy:
     def get_by_code(self, code):
         #TODO: Expand on this function
         """Grabs car info by NIKKYO Code no."""
-        results = get_car_data_as_json(self.browser, self.date)[0]
-        for i, object in enumerate(results):
-            values = results[i].values()
-            code = '  %s  ' % code
-            if code in values:
-                car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
-                self.browser.get(car_url)
-                # TODO: This code is dumb should just use car_url and check if photos on site
-                # TODO: break down get pic urls into multiple functions so we can pull further
-                # Following code is redunant need to improve
-
-                break
-            else:
-                print('The code you mentioned is not in the date range')
-                self.log_file.write('The car code is not in the date range\n')
-                keep_trying = input("Would you like to keep trying dates? (Y/n) ").lower()
-                if keep_trying == 'y':
-                    date = self.date
-                    date = datetime.strptime(date, "%Y/%m/%d")
-                    import datetime
-                    new_date = date - datetime.timedelta(days=30)
-                    navigate(new_date)
-                    get_by_code(code)
-                elif keep_trying == "n":
-                    print('Okay see you next time!')
-                    self.log_file.write('Quit navigating!')
-                    break
-                break
+        car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
+        self.browser.get(car_url)
+        # TODO: break down get pic urls into multiple functions so we can pull further
+        # TODO: check if photos on page return
+        thumbnails = self.browser.find_leements_by_class_name('poppic')
+        if thumbnails:
+            thumbnail_dl(browser)
+        else:
+            print('There is no such code on the Nikkyo Database')
+            self.log_file.write('There is no NK code: %s\n' % code)
         return self
 
 
