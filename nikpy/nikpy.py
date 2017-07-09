@@ -122,12 +122,18 @@ class NikPy:
         """Grabs car info by NIKKYO Code no."""
         car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
         self.browser.get(car_url)
+        folder_path = os.path.join('Car Photos', code)
+        if os.path.exists(folder_path):
+            print('Folder path: %s already exists' % folder_path)
+            self.log_file.write('Folder path: %s already exists\n' % folder_path)
+        else:
+            print('Building folder: %s' % folder_path)
+            make_folder = os.makedirs(folder_path)
         # TODO: break down get pic urls into multiple functions so we can pull further
-        # TODO: TEST
         thumbnails = self.browser.find_elements_by_class_name('poppic')
         if thumbnails:
             links = thumbnail_dl(self.browser)
-            download_images(links)
+            download_images(links, code)
         else:
             print('There is no such code on the Nikkyo Database')
             self.log_file.write('There is no NK code: %s\n' % code)

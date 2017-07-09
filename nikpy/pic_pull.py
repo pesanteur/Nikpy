@@ -1,4 +1,5 @@
 """Pulls pictures from account page on website"""
+import requests
 import os
 from .data_util import get_table_data
 
@@ -87,12 +88,15 @@ def thumbnail_dl(browser):
 
     return inner_links
 
-def download_images(links):
+def download_images(links, code):
+    folder_path = os.path.join('Car Photos', code)
     for link in links:
-        print("Now downloading image file: %s" % os.path.basename(value))
-	self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
-	res = requests.get(value)
-	image_file = open(os.path.join(folder_path, os.path.basename(value)), 'wb')
-	for chunk in res.iter_content(100000):
-		image_file.write(chunk)
-	image_file.close()
+        print("Now downloading image file: %s" % os.path.basename(link))
+
+        res = requests.get(link)
+        image_file = open(os.path.join(folder_path, os.path.basename(link)), 'wb')
+
+        for chunk in res.iter_content(100000):
+            image_file.write(chunk)
+
+        image_file.close()
