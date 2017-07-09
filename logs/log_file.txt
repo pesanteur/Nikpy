@@ -7230,3 +7230,16 @@ Quit navigating!
 Session ended - 2017-07-04 16:23:31
 --------------------
 
+Session started - 2017-07-08 23:34:34
+Logged in successfully!
+Navigated to desired page
+Start date 2017/03/03 Session started - 2017-07-08 23:37:35
+Logged in successfully!
+Session started - 2017-07-08 23:40:08
+Logged in successfully!
+Session started - 2017-07-08 23:45:59
+Logged in successfully!
+
+Session ended - 2017-07-08 23:47:23
+--------------------
+

@@ -73,8 +73,8 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
 
 def thumbnail_dl(browser):
     """Pulls links for car photos from vehicle specific page"""
-    # TODO: find Code on page
-    code = //*[@id="vehicle_tbl"]/tbody/tr[1]/td #XPATH SELECTOR won't work
+    #code = //*[@id="vehicle_tbl"]/tbody/tr[1]/td #XPATH SELECTOR won't work
+    code = browser.find_element_by_xpath("//*[@id='vehicle_tbl']/tbody/tr[1]/td")
     thumbnails = browser.find_elements_by_class_name('poppic')
 
     inner_links = []
@@ -86,3 +86,13 @@ def thumbnail_dl(browser):
         inner_links.append(car_pic)
 
     return inner_links
+
+def download_images(links):
+    for link in links:
+        print("Now downloading image file: %s" % os.path.basename(value))
+	self.log_file.write('Now downloading image file:%s\n '% os.path.basename(value))
+	res = requests.get(value)
+	image_file = open(os.path.join(folder_path, os.path.basename(value)), 'wb')
+	for chunk in res.iter_content(100000):
+		image_file.write(chunk)
+	image_file.close()

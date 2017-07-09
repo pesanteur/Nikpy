@@ -4,7 +4,7 @@ from selenium import webdriver
 from .login_util import login_user
 from .navi_util import date_range
 from .data_util import get_car_data_as_json, get_table_data
-from .pic_pull import pic_pull
+from .pic_pull import pic_pull, thumbnail_dl, download_images
 from collections import OrderedDict
 import json
 import os
@@ -123,10 +123,11 @@ class NikPy:
         car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
         self.browser.get(car_url)
         # TODO: break down get pic urls into multiple functions so we can pull further
-        # TODO: check if photos on page return
-        thumbnails = self.browser.find_leements_by_class_name('poppic')
+        # TODO: TEST
+        thumbnails = self.browser.find_elements_by_class_name('poppic')
         if thumbnails:
-            thumbnail_dl(browser)
+            links = thumbnail_dl(self.browser)
+            download_images(links)
         else:
             print('There is no such code on the Nikkyo Database')
             self.log_file.write('There is no NK code: %s\n' % code)
