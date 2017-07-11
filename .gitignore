@@ -13,6 +13,7 @@ __pycache__
 ## Private file ##
 run.py
 runp.py
+download_table_data.py
 
 ## Log Files
 log_file.txt

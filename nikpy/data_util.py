@@ -37,6 +37,19 @@ def get_car_data_as_json(browser, date, table_id='GeneralPurchases'):
         json.dump(results, outfile)
 """
 
+def get_car_data_as_csv(browser, table_id='GeneralPurchases'):
+    """Gets all of car data as a csv table"""
+    delay = 35 # seconds
+    try:
+        element_present = EC.presence_of_element_located((By.ID, table_id))
+        WebDriverWait(browser, delay).until(element_present)
+        print('Page is ready')
+    except TimeoutException:
+        print('Loading took too much time.')
+    html_source = browser.page_source
+    tables = pd.read_html(html_source)
+    return tables
+
 def get_table_data(browser, table_id='vehicle_tbl'):
     """Test function to generalize above function.
     #TODO: This does not perfectly pull information table from site.

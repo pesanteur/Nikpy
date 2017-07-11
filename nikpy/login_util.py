@@ -10,6 +10,8 @@ def login_user(browser, username, password):
     password_elem.send_keys(password)
     password_elem.submit()
 
+    #TODO: use Selenium specific sleep function that works on page load.
+    # This is more ideal than a static sleep time as it makes the function load time agnostic
     sleep(3)
 
     main_div = browser.find_elements_by_id('main_div') # Check is main_div, this div only on main page

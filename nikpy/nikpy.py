@@ -3,7 +3,7 @@ from os import environ # used to get setup variables from the environ
 from selenium import webdriver
 from .login_util import login_user
 from .navi_util import date_range
-from .data_util import get_car_data_as_json, get_table_data
+from .data_util import get_car_data_as_json, get_table_data, get_car_data_as_csv
 from .pic_pull import pic_pull, thumbnail_dl, download_images
 from collections import OrderedDict
 import json
@@ -116,6 +116,13 @@ class NikPy:
             self.log_file.write('Downloading complete!\n')
         return self
 
+
+    def create_car_table(self):
+        results = get_car_data_as_csv(self.browser)
+        table5 = results[4]
+        table5.to_csv("nikkyo_table.csv", index=False)
+
+        return self
 
     def get_by_code(self, code):
         #TODO: Expand on this function
