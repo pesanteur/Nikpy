@@ -7308,3 +7308,29 @@ Start date 2000/06/27
 Session ended - 2017-07-10 23:47:58
 --------------------
 
+Session started - 2017-07-11 09:57:57
+Logged in successfully!
+Navigated to desired page
+Start date 2000/06/27 
+Session ended - 2017-07-11 10:00:11
+--------------------
+
+Session started - 2017-07-12 09:26:15
+Logged in successfully!
+Folder path: Car Photos/181851 already exists
+
+Session ended - 2017-07-12 09:27:51
+--------------------
+
+Session started - 2017-07-12 16:27:40
+Logged in successfully!
+
+Session ended - 2017-07-12 16:31:35
+--------------------
+
+Session started - 2017-07-12 17:08:04
+Logged in successfully!
+
+Session ended - 2017-07-12 17:10:28
+--------------------
+
