@@ -41,7 +41,6 @@ class NikPy:
     def navigate(self, date):
         "Used to navigate to main account page."
         self.date = date
-        #TODO: Include start and end date range in date range util
         date_range(self.browser, self.date)
         print('Navigated to desired page!')
         self.log_file.write('Navigated to desired page\n')
@@ -125,7 +124,6 @@ class NikPy:
         return self
 
     def get_by_code(self, code):
-        #TODO: Expand on this function
         """Grabs car info by NIKKYO Code no."""
         car_url = "http://www.nikkyocars.com/n2014/stock/stock-view.asp?history=true&code=" + code + "&lang=en"
         self.browser.get(car_url)
@@ -136,7 +134,6 @@ class NikPy:
         else:
             print('Building folder: %s' % folder_path)
             make_folder = os.makedirs(folder_path)
-        # TODO: break down get pic urls into multiple functions so we can pull further
         thumbnails = self.browser.find_elements_by_class_name('poppic')
         if thumbnails:
             links = thumbnail_dl(self.browser)

@@ -74,8 +74,7 @@ def pic_pull(browser): # maybe change this to just get pics and then create anot
 
 def thumbnail_dl(browser):
     """Pulls links for car photos from vehicle specific page"""
-    #code = //*[@id="vehicle_tbl"]/tbody/tr[1]/td #XPATH SELECTOR won't work
-    code = browser.find_element_by_xpath("//*[@id='vehicle_tbl']/tbody/tr[1]/td")
+    code = browser.find_element_by_xpath("//*[@id='vehicle_tbl']/tbody/tr[1]/td") #TODO: This doesn't print code, but instead element. FIX
     thumbnails = browser.find_elements_by_class_name('poppic')
 
     inner_links = []
