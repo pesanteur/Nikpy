@@ -27,6 +27,7 @@ class NikPy:
 
     def login(self):
         "Used to login the user with the Nik username and password"
+        # TODO: Getting login details are incorrect. Fix this.
         if not login_user(self.browser, self.username, self.password):
             print('The login details are incorrect.')
             self.log_file.write('Wrong login details.\n')
@@ -116,10 +117,15 @@ class NikPy:
         return self
 
 
-    def create_car_table(self):
+    def create_car_table(self, date):
+        """This function pulls entire Nikkyo table, or tabular date range. Acts as a caching mechanism."""
+        # TODO: .to_csv breaks when we use %s. Find out why and fix.
         results = get_car_data_as_csv(self.browser)
         table5 = results[4]
-        table5.to_csv("nikkyo_table.csv", index=False)
+        #filename = ("%s_nikkyo_table.csv" % date)
+        #f = open(filename, 'w')
+        table5.to_csv("test.csv", index=False)
+        #f.close()
 
         return self
 
