@@ -27,15 +27,15 @@ class NikPy:
 
     def login(self):
         "Used to login the user with the Nik username and password"
-        # TODO: Getting login details are incorrect. Fix this.
-        if not login_user(self.browser, self.username, self.password):
-            print('The login details are incorrect.')
-            self.log_file.write('Wrong login details.\n')
-
-            self.aborting = True
-        else:
+        try:
+            login_user(self.browser, self.username, self.password)
             print('Logged in successfully!')
             self.log_file.write('Logged in successfully!\n')
+
+        except:
+            print('The login details are incorrect.')
+            self.log_file.write('Wrong login details.\n')
+            self.aborting = True
 
         return self
 
