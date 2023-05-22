@@ -17,7 +17,7 @@ pandas == 0.19.2
 # Car Photos/test_dl.py: 1
 # nikpy/nikpy.py: 11
 # test_grab.py: 2
-requests == 2.20.0
+requests == 2.31.0
 
 # nikpy/data_util.py: 6,7,8,9
 # nikpy/nikpy.py: 3
